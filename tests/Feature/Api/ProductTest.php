@@ -4,19 +4,16 @@ namespace Tests\Feature\Api;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ProductTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
 
     protected function setUp(): void
     {
         parent::setUp();
-
-        Product::query()->delete();
-        Category::query()->delete();
 
         Category::factory()->create(['name' => 'Electronics']);
         Category::factory()->create(['name' => 'Books']);

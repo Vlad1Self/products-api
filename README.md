@@ -2,6 +2,11 @@
 
 Реализация поиска по товарам с фильтрами, сортировкой и пагинацией.
 
+## Технологический стек
+- **Framework:** Laravel 12
+- **Database:** MySQL (Нужно учесть, что если использовать, например, PostgreSQL, то поиск станет регистрозависимым, т.к. используется функция LIKE)
+- **Architecture:** Controller (Request) -> DTO -> Service (Interface) -> Model (Query Scopes) -> Resource/Collection
+
 ## Установка
 
 1. **Клонируйте репозиторий:**

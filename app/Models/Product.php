@@ -34,7 +34,7 @@ class Product extends Model
         return $query->when(
             filled($q),
             fn(Builder $qBuilder) =>
-            $qBuilder->where('name', 'ILIKE', '%' . trim($q) . '%')
+            $qBuilder->where('name', 'LIKE', '%' . trim($q) . '%')
         );
     }
 
